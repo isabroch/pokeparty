@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "sass/style.css",
+	"sources": [
+		"sass/style.scss"
+	],
+	"sourcesContent": [
+		".myPokeParty {\n  background: rgb(219, 219, 219);\n  max-width: 500px;\n\n  [class*=\"poke\"] {}\n\n  .poke {\n    @at-root &_head {\n      position: relative;\n      @at-root &_name {}\n\n      @at-root &_img {\n        border-radius: 100%;\n        width: 100px;\n        height: 100px;\n        background: white;\n        display: flex;\n        justify-content: center;\n        align-items: center;\n\n        img {\n          max-width: 95%;\n        }\n      }\n      //end img code\n\n      @at-root &_ball {}\n      //end ball code\n\n      @at-root &_item {}\n      //end item code\n    }\n    //end head code\n\n    @at-root &_info {\n      position: grid;\n    }\n  }\n}\n"
+	],
+	"mappings": ";AAAA,AAAA,YAAY,CAAC;EACX,UAAU,EAAE,OAAG;EACf,SAAS,EAAE,KAAM;CAoClB;;;AAtCD,AAME,YANU,CAMV,UAAK,CACa;EACd,QAAQ,EAAE,QAAS;CAuBpB;;;AA/BL,AAME,YANU,CAMV,cAAK,CAKc;EACb,aAAa,EAAE,IAAK;EACpB,KAAK,EAAE,KAAM;EACb,MAAM,EAAE,KAAM;EACd,UAAU,EAAE,KAAM;EAClB,OAAO,EAAE,IAAK;EACd,eAAe,EAAE,MAAO;EACxB,WAAW,EAAE,MAAO;CAKrB;;;AAvBP,AAoBQ,YApBI,CAMV,cAAK,CAcC,GAAG,CAAC;EACF,SAAS,EAAE,GAAI;CAChB;;;AAtBT,AAME,YANU,CAMV,UAAK,CA4Ba;EACd,QAAQ,EAAE,IAAK;CAChB",
+	"names": []
+}

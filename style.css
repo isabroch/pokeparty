@@ -1,0 +1,39 @@
+body {
+  font-family: "PT Sans", sans-serif; }
+
+.myPokeParty {
+  font-size: 14px;
+  background: rgba(242, 242, 242, 0.75);
+  border: 1px solid darkgray;
+  max-width: 500px;
+  box-sizing: border-box;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); }
+  .myPokeParty [class*="poke_0"] {
+    display: grid;
+    grid-template-columns: 1fr 3fr; }
+  .myPokeParty .poke_title {
+    font-size: .9em;
+    padding: 5px;
+    background: darkgray;
+    color: black;
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-bottom: 5px;
+    text-transform: uppercase; }
+  .myPokeParty .poke_img {
+    grid-column: 1 / -1;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; }
+    .myPokeParty .poke_img img {
+      max-width: 95%; }
+  .myPokeParty .poke_ball img, .myPokeParty .poke_item img {
+    max-width: 100%; }
+  .myPokeParty_info {
+    position: grid;
+    padding: 5px;
+    margin: 5px 0 5px 5px;
+    overflow-y: scroll; }
