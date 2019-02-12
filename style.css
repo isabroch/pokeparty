@@ -135,7 +135,7 @@ body {
 }
 
 .myPokeParty .poke_move {
-	--moveType: #4656a8;
+	--moveType: rgba(0,0,0,0);
 	border-left: 4px solid var(--moveType);
 	padding: 1px 0 1px 4px;
 }
