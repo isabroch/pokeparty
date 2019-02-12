@@ -1,39 +1,147 @@
 body {
-  font-family: "PT Sans", sans-serif; }
+	margin: 0;
+	padding: 0;
+}
 
 .myPokeParty {
-  font-size: 14px;
-  background: rgba(242, 242, 242, 0.75);
-  border: 1px solid darkgray;
-  max-width: 500px;
-  box-sizing: border-box;
-  padding: 10px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); }
-  .myPokeParty [class*="poke_0"] {
-    display: grid;
-    grid-template-columns: 1fr 3fr; }
-  .myPokeParty .poke_title {
-    font-size: .9em;
-    padding: 5px;
-    background: darkgray;
-    color: black;
-    grid-column: 1 / -1;
-    text-align: center;
-    margin-bottom: 5px;
-    text-transform: uppercase; }
-  .myPokeParty .poke_img {
-    grid-column: 1 / -1;
-    height: 90px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start; }
-    .myPokeParty .poke_img img {
-      max-width: 95%; }
-  .myPokeParty .poke_ball img, .myPokeParty .poke_item img {
-    max-width: 100%; }
-  .myPokeParty_info {
-    position: grid;
-    padding: 5px;
-    margin: 5px 0 5px 5px;
-    overflow-y: scroll; }
+	--bgc: rgba(255,255,255,.7);
+	font-size: 11px;
+	font-family: monospace;
+	background: rgba(215, 215, 215, 0.7);
+	width: calc(100% - 20px);
+	box-sizing: border-box;
+	padding: 10px;
+	border: 1px solid darkgray;
+	margin: 30px 10px 10px 10px;
+	position: relative;
+}
+
+.myPokeParty::before {
+	display: block;
+	position: absolute;
+	z-index: 5;
+	top: -25px;
+	left: 5px;
+	font-size: 1.8em;
+	content: attr(data-title);
+}
+
+.myPokeParty .poke_mons {
+	overflow-x: auto;
+	padding: 10px;
+	display: grid;
+	grid-template-columns: repeat(12, 70px);
+	grid-template-rows: repeat(4, max-content);
+	grid-column-gap: 10px;
+	grid-auto-flow: column;
+}
+
+.myPokeParty .poke-01 {
+	--c1: #4656a8;
+	grid-column-start: 1;
+}
+
+.myPokeParty .poke_held {
+	grid-column-end: span 2;
+	grid-row: 1;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	background: var(--bgc);
+	padding: 5px 10px;
+	border-top: 20px solid var(--c1);
+	border-bottom: 0 none var(--c1);
+}
+
+.myPokeParty .poke_hidden {
+	display: none;
+}
+
+.myPokeParty .poke_ball, .myPokeParty .poke_item {
+	max-width: 100%;
+}
+
+.myPokeParty .poke_img {
+	grid-column-end: span 2;
+	grid-row: 2;
+	display: flex;
+	justify-content: center;
+	align-items: end;
+	background: var(--bgc);
+	padding: 5px 10px;
+}
+
+.myPokeParty .poke_img img {
+	max-width: 100%;
+}
+
+.myPokeParty .poke_who {
+	grid-column-end: span 2;
+	grid-row: 3;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: var(--bgc);
+	padding: 5px 10px;
+	border-top: 0 none var(--c1);
+	border-bottom: 2px dotted var(--c1);
+	text-align: center;
+	flex-direction: column;
+}
+
+.myPokeParty .poke_name {
+	font-weight: bold;
+	font-size: 1.1em;
+}
+
+.myPokeParty .poke_species {
+	text-transform: uppercase;
+	font-size: 0.9em;
+}
+
+.myPokeParty .poke_stats {
+	grid-column-end: span 2;
+	grid-row: 5;
+	display: flex;
+	justify-content: space-between;
+	align-items: start;
+	background: var(--bgc);
+	padding: 5px 10px;
+}
+
+.myPokeParty .poke_skills {
+	flex: 1;
+}
+
+.myPokeParty .poke_skills a {
+	text-decoration: none;
+	color: black;
+	display: block;
+	opacity: 0.9;
+	margin: 2px 0;
+	transition: 0.3s;
+}
+
+.myPokeParty .poke_skills a:hover {
+	opacity: 1;
+	border-left-width: 10px;
+}
+
+.myPokeParty .poke_ability {
+	font-style: italic;
+	font-weight: bold;
+	border-left: 0 solid rgba(0, 0, 0, 0);
+	padding: 1px 0 1px;
+}
+
+.myPokeParty .poke_move {
+	--moveType: #4656a8;
+	border-left: 4px solid var(--moveType);
+	padding: 1px 0 1px 4px;
+}
+
+.myPokeParty .poke_about {
+	text-align: center;
+	line-height: calc(1em + 5px);
+	margin: 2px 0;
+}
