@@ -37,7 +37,6 @@ body {
 }
 
 .myPokeParty .poke-01 {
-	--c1: #4656a8;
 	grid-column-start: 1;
 }
 
